@@ -4,7 +4,12 @@ import styled from 'styled-components';
 const Login = (props) => {
     return(
         <Container>
-            <Content><BgImage /></Content>
+            <Content>
+                <CTA>
+                    <CTALogoOne src="/disney-plus/images/cta-logo-one.svg" alt=""/>
+                </CTA>
+                <BgImage />
+            </Content>
         </Container>
     );
 };
@@ -15,7 +20,6 @@ const Container = styled.section`
     flex-direction: column;
     text-align: center;
     height: 100vh;
-    z-index: -1;
 `;
 
 const Content = styled.div`
@@ -30,7 +34,6 @@ const Content = styled.div`
     flex-direction: column;
     padding: 80px 40px;
     height: 100%;
-    z-index: 1000;
 `;
 
 const BgImage = styled.div`
@@ -44,6 +47,21 @@ const BgImage = styled.div`
     right: 0;
     left: 0;
     z-index: -1;
+`;
+
+const CTA = styled.div`
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+`;
+
+const CTALogoOne = styled.img`
+    margin-bottom: 12px;
+    max-width: 600px;
+    min-height: 1px;
+    display: block;
+    width: 100%;
 `;
 
 export default Login;
