@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/disney-plus/static/css/main.388f1dcc.chunk.css",
-    "main.js": "/disney-plus/static/js/main.cde13cca.chunk.js",
-    "main.js.map": "/disney-plus/static/js/main.cde13cca.chunk.js.map",
+    "main.js": "/disney-plus/static/js/main.9f0abd9c.chunk.js",
+    "main.js.map": "/disney-plus/static/js/main.9f0abd9c.chunk.js.map",
     "runtime-main.js": "/disney-plus/static/js/runtime-main.9db73aa2.js",
     "runtime-main.js.map": "/disney-plus/static/js/runtime-main.9db73aa2.js.map",
-    "static/js/2.9e5b2f8a.chunk.js": "/disney-plus/static/js/2.9e5b2f8a.chunk.js",
-    "static/js/2.9e5b2f8a.chunk.js.map": "/disney-plus/static/js/2.9e5b2f8a.chunk.js.map",
+    "static/js/2.d4858151.chunk.js": "/disney-plus/static/js/2.d4858151.chunk.js",
+    "static/js/2.d4858151.chunk.js.map": "/disney-plus/static/js/2.d4858151.chunk.js.map",
     "index.html": "/disney-plus/index.html",
     "static/css/main.388f1dcc.chunk.css.map": "/disney-plus/static/css/main.388f1dcc.chunk.css.map",
-    "static/js/2.9e5b2f8a.chunk.js.LICENSE.txt": "/disney-plus/static/js/2.9e5b2f8a.chunk.js.LICENSE.txt"
+    "static/js/2.d4858151.chunk.js.LICENSE.txt": "/disney-plus/static/js/2.d4858151.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9db73aa2.js",
-    "static/js/2.9e5b2f8a.chunk.js",
+    "static/js/2.d4858151.chunk.js",
     "static/css/main.388f1dcc.chunk.css",
-    "static/js/main.cde13cca.chunk.js"
+    "static/js/main.9f0abd9c.chunk.js"
   ]
 }
