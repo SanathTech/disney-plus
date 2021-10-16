@@ -1,38 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { auth, provider } from './firebase';
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { selectUserName, selectUserPhoto, setUserLoginDetails, } from '../features/user/userSlice';
+import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../features/user/userSlice';
 
 const Header = (props) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
+    const [handle,setHandle] = useState(false);
+
+    // const handleAuth = () => {
+    //     signInWithPopup(auth, provider)
+    //     .then((result) => {
+    //         console.log(result);
+    //         setUser(result.user);
+    //     }).catch((error) => {
+    //         alert(error.message);
+    //     });
+    // }
 
     const handleAuth = () => {
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            // ...
-            setUser(result.user);
-        }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-        });
+        signInWithRedirect(auth, provider);
+        setHandle(!handle);
     }
+
+    useEffect(() => {
+        getRedirectResult(auth)
+        .then((result) => {
+            if (result !== null) {
+                setUser(result.user);
+            }
+        }).catch((error) => {
+            alert(error.message);
+        }); 
+    }, [handle]);
 
     const setUser = (user) => {
         dispatch(
