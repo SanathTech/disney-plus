@@ -2,8 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { auth, provider } from './firebase';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { selectUserName, selectUserPhoto, setUserLoginDetails, } from '../features/user/userSlice';
 
 const Header = (props) => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const userName = useSelector(selectUserName);
+    const userPhoto = useSelector(selectUserPhoto);
 
     const handleAuth = () => {
         signInWithPopup(auth, provider)
@@ -14,6 +21,7 @@ const Header = (props) => {
             // The signed-in user info.
             const user = result.user;
             // ...
+            setUser(result.user);
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -26,38 +34,54 @@ const Header = (props) => {
         });
     }
 
+    const setUser = (user) => {
+        dispatch(
+            setUserLoginDetails({
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL,
+            })
+        );
+    };
+
     return (
         <Nav>
             <Logo>
                 <img src="/disney-plus/images/logo.svg" />
             </Logo>
-            <NavMenu>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/home-icon.svg" />
-                    <span>HOME</span>
-                </a>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/search-icon.svg" />
-                    <span>SEARCH</span>
-                </a>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/watchlist-icon.svg" />
-                    <span>WATCHLIST</span>
-                </a>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/original-icon.svg" />
-                    <span>ORIGINALS</span>
-                </a>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/movie-icon.svg" />
-                    <span>MOVIES</span>
-                </a>
-                <a href="/disney-plus/home">
-                    <img src="/disney-plus/images/series-icon.svg" />
-                    <span>SERIES</span>
-                </a>
-            </NavMenu>
-            <Login onClick={handleAuth}>Log in</Login>
+            {!userName ? 
+                <Login onClick={handleAuth}>Log in</Login> :
+                <>
+                    <NavMenu>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/home-icon.svg" />
+                            <span>HOME</span>
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/search-icon.svg" />
+                            <span>SEARCH</span>
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/watchlist-icon.svg" />
+                            <span>WATCHLIST</span>
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/original-icon.svg" />
+                            <span>ORIGINALS</span>
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/movie-icon.svg" />
+                            <span>MOVIES</span>
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/series-icon.svg" />
+                            <span>SERIES</span>
+                        </a>
+                    </NavMenu>
+                    <UserImg src={userPhoto} alt={userName} />
+                </>
+            }
+            
         </Nav>
     )
 }
@@ -171,6 +195,10 @@ const Login = styled.div`
         color: #000;
         border-color: transparent;
     }
+`
+
+const UserImg = styled.img`
+    height: 100%;
 `
 
 export default Header
