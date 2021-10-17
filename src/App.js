@@ -13,7 +13,7 @@ function App() {
           <Route exact path='/disney-plus'>
             <Login />
           </Route>
-          <Route path='/home'>
+          <Route path='/disney-plus/home'>
             <Home />
           </Route>
         </Switch>
