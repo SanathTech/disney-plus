@@ -7,13 +7,13 @@ import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/disney-plus">
         <Header />
         <Switch>
-          <Route exact path='/disney-plus'>
+          <Route exact path='/'>
             <Login />
           </Route>
-          <Route path='/disney-plus/home'>
+          <Route path='/home'>
             <Home />
           </Route>
           <Route path='/*'>

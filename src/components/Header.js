@@ -16,7 +16,7 @@ const Header = (props) => {
         auth.onAuthStateChanged(async (user) => {
             if(user) {
                 setUser(user);
-                history.push("/disney-plus/home");
+                history.push("/home");
             }
         });
     }, [userName]);
@@ -33,7 +33,7 @@ const Header = (props) => {
         } else {
             auth.signOut().then(() => {
                 dispatch(setSignOutState());
-                history.push('/disney-plus');
+                history.push('/');
             })
             .catch((err) => alert(err.message));
         }
