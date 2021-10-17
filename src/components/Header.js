@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { auth, provider } from './firebase';
-import { signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../features/user/userSlice';
@@ -11,7 +11,6 @@ const Header = (props) => {
     const history = useHistory();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
-    const [handle,setHandle] = useState(false);
 
     const handleAuth = () => {
         signInWithPopup(auth, provider)
@@ -21,23 +20,7 @@ const Header = (props) => {
         }).catch((error) => {
             alert(error.message);
         });
-    }
-
-    // const handleAuth = () => {
-    //     signInWithRedirect(auth, provider);
-    //     setHandle(!handle);
-    // }
-
-    // useEffect(() => {
-    //     getRedirectResult(auth)
-    //     .then((result) => {
-    //         if (result !== null) {
-    //             setUser(result.user);
-    //         }
-    //     }).catch((error) => {
-    //         alert(error.message);
-    //     }); 
-    // }, [handle]);
+    };
 
     const setUser = (user) => {
         dispatch(
