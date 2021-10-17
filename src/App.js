@@ -16,6 +16,9 @@ function App() {
           <Route path='/disney-plus/home'>
             <Home />
           </Route>
+          <Route path='/*'>
+            <Home />
+          </Route>
         </Switch>
       </Router>
     </div>
