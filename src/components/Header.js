@@ -13,31 +13,31 @@ const Header = (props) => {
     const userPhoto = useSelector(selectUserPhoto);
     const [handle,setHandle] = useState(false);
 
-    // const handleAuth = () => {
-    //     signInWithPopup(auth, provider)
-    //     .then((result) => {
-    //         console.log(result);
-    //         setUser(result.user);
-    //     }).catch((error) => {
-    //         alert(error.message);
-    //     });
-    // }
-
     const handleAuth = () => {
-        signInWithRedirect(auth, provider);
-        setHandle(!handle);
-    }
-
-    useEffect(() => {
-        getRedirectResult(auth)
+        signInWithPopup(auth, provider)
         .then((result) => {
-            if (result !== null) {
-                setUser(result.user);
-            }
+            console.log(result);
+            setUser(result.user);
         }).catch((error) => {
             alert(error.message);
-        }); 
-    }, [handle]);
+        });
+    }
+
+    // const handleAuth = () => {
+    //     signInWithRedirect(auth, provider);
+    //     setHandle(!handle);
+    // }
+
+    // useEffect(() => {
+    //     getRedirectResult(auth)
+    //     .then((result) => {
+    //         if (result !== null) {
+    //             setUser(result.user);
+    //         }
+    //     }).catch((error) => {
+    //         alert(error.message);
+    //     }); 
+    // }, [handle]);
 
     const setUser = (user) => {
         dispatch(
