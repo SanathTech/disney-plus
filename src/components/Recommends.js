@@ -13,7 +13,6 @@ const Recommends = (props) => {
                 {
                     movies && movies.map((movie,key) => (
                         <Wrap key={key}>
-                            {movie.id}
                             <Link to={'/detail/' + movie.id}>
                                 <img src={movie.cardImg} alt={movie.title} />
                             </Link>
@@ -26,7 +25,7 @@ const Recommends = (props) => {
 }
 
 const Container = styled.div`
-    padding: 10px 0 0 10px;
+    padding: 10px 10px 0 10px;
 `
 
 const Content = styled.div`
