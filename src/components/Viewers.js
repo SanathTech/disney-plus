@@ -5,37 +5,37 @@ const Viewers = (props) => {
         <Container>
             <Wrap>
                 <img src="/disney-plus/images/viewers-disney.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/disney.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
             <Wrap>
                 <img src="/disney-plus/images/viewers-pixar.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/pixar.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
             <Wrap>
                 <img src="/disney-plus/images/viewers-marvel.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/marvel.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
             <Wrap>
                 <img src="/disney-plus/images/viewers-starwars.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/star-wars.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
             <Wrap>
                 <img src="/disney-plus/images/viewers-national.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/national-geographic.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
             <Wrap>
                 <img src="/disney-plus/images/viewers-star.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                <video muted autoPlay={true} loop={true} playsInline={true}>
                     <source src="/disney-plus/videos/star.mp4" type="video/mp4"/>
                 </video>
             </Wrap>
@@ -44,7 +44,7 @@ const Viewers = (props) => {
 }
 
 const Container = styled.div`
-    padding: 30px 10px 26px;
+    padding: 20px 10px 0px;
     display: grid;
     grid-gap: 25px;
     gap: 25px;
