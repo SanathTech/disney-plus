@@ -93,7 +93,7 @@ const Wrap = styled.div`
 
         div {
             height: 0;
-            min-height: 180px;
+            min-height: 170px;
             width: 100%;
             background-position: right;
             background-size: cover;
