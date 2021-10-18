@@ -17,22 +17,22 @@ const ImgSlider = (props) => {
         <Carousel {...settings}>
             <Wrap>
                 <a>
-                    <img src="/disney-plus/images/slider-badging.jpg" alt="" />
+                    <div id="badging"/>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <img src="/disney-plus/images/slider-scale.jpg" alt="" />
+                    <div id="scale"/>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <img src="/disney-plus/images/slider-badag.jpg" alt="" />
+                    <div id="badag"/>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <img src="/disney-plus/images/slider-scales.jpg" alt="" />
+                    <div id="scales"/>
                 </a>
             </Wrap>
         </Carousel>
@@ -91,9 +91,30 @@ const Wrap = styled.div`
         position: relative;
         padding: 4px;
 
-        img {
+        div {
+            height: 0;
+            min-height: 180px;
             width: 100%;
-            height: 100%;
+            background-position: right;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 25.55%;
+        }
+
+        #badging {
+            background-image: url('/disney-plus/images/slider-badging.jpg')
+        }
+
+        #scale {
+            background-image: url('/disney-plus/images/slider-scale.jpg')
+        }
+
+        #badag {
+            background-image: url('/disney-plus/images/slider-badag.jpg')
+        }
+
+        #scales {
+            background-image: url('/disney-plus/images/slider-scales.jpg')
         }
 
         &:hover {
