@@ -104,11 +104,17 @@ const Carousel = styled(Slider)`
             font-size: 10px;
             opacity: 1;
             color: rgb(150, 158, 171);
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
 
     li.slick-active button:before {
         color: white;
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     .slick-list {
