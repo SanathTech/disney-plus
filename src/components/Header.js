@@ -84,6 +84,20 @@ const Header = (props) => {
                             <span>SERIES</span>
                         </a>
                     </NavMenu>
+                    <NavMenuIcons>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/home-icon.svg" />
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/search-icon.svg" />
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/watchlist-icon.svg" />
+                        </a>
+                        <a href="/disney-plus/home">
+                            <img src="/disney-plus/images/dots-icon.svg" />
+                        </a>
+                    </NavMenuIcons>
                     <SignOut>
                         <UserImg src={userPhoto} alt={userName} />
                         <DropDown>
@@ -103,19 +117,17 @@ const Nav = styled.nav`
     left: 0;
     right: 0;
     height: 70px;
-    background-color: #090b13;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 36px;
+    padding: 0 39px;
     letter-spacing: 16px;
     z-index: 3;
 `;
 
 const Logo = styled.a`
     padding: 0;
-    width: 80px;
-    margin-top: 4px;
+    width: 73px;
     max-height: 70px;
     font-size: 0;
     display: inline-block;
@@ -136,12 +148,12 @@ const NavMenu = styled.div`
     padding: 0;
     position: relative;
     margin-right: auto;
-    margin-left: 25px;
+    margin-left: 40px;
 
     a {
         display: flex;
         align-items: center;
-        padding: 0 12px;
+        padding: 0 15px;
 
         img {
             height: 20px;
@@ -152,10 +164,10 @@ const NavMenu = styled.div`
 
         span {
             color: rgb(249, 249, 249);
-            font-size: 15px;
+            font-size: 13px;
             letter-spacing: 1.42px;
             line-height: 1.08;
-            padding: 2px 0 2px 5px;
+            padding: 2px 0 2px 10px;
             white-space: nowrap;
             position: relative;
 
@@ -175,10 +187,6 @@ const NavMenu = styled.div`
                 visibility: hidden;
                 width: auto;
             }
-
-            @media (max-width: 1000px) {
-                display: none;
-            }
         }
 
         &:hover {
@@ -188,6 +196,48 @@ const NavMenu = styled.div`
                 opacity: 1 !important;
             }
         }
+    }
+
+    @media (max-width: 1007px) {
+        display: none;
+    }
+`;
+
+const NavMenuIcons = styled.div`
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-right: auto;
+    margin-left: 35px;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+
+        img {
+            height: 24px;
+            min-width: 24px;
+            width: 24px;
+            z-index: auto;
+        }
+
+        &:hover {
+            span:before {
+                transform: scaleX(1);
+                visibility: visible;
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    @media (min-width: 1008px) {
+        display: none;
     }
 `;
 
