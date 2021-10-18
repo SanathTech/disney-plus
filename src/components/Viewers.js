@@ -3,64 +3,54 @@ import styled from "styled-components";
 const Viewers = (props) => {
     return (
         <Container>
-            <Scroll>
-                <Wrap>
-                    <img src="/disney-plus/images/viewers-disney.png" alt="" />
-                    <video muted autoPlay={true} loop={true} playsInLine={true}>
-                        <source src="/disney-plus/videos/disney.mp4" type="video/mp4"/>
-                    </video>
-                </Wrap>
-                <Wrap>
-                    <img src="/disney-plus/images/viewers-pixar.png" alt="" />
-                    <video muted autoPlay={true} loop={true} playsInLine={true}>
-                        <source src="/disney-plus/videos/pixar.mp4" type="video/mp4"/>
-                    </video>
-                </Wrap>
-                <Wrap>
-                    <img src="/disney-plus/images/viewers-marvel.png" alt="" />
-                    <video muted autoPlay={true} loop={true} playsInLine={true}>
-                        <source src="/disney-plus/videos/marvel.mp4" type="video/mp4"/>
-                    </video>
-                </Wrap>
-                <Wrap>
-                    <img src="/disney-plus/images/viewers-starwars.png" alt="" />
-                    <video muted autoPlay={true} loop={true} playsInLine={true}>
-                        <source src="/disney-plus/videos/star-wars.mp4" type="video/mp4"/>
-                    </video>
-                </Wrap>
-                <Wrap>
-                    <img src="/disney-plus/images/viewers-national.png" alt="" />
-                    <video muted autoPlay={true} loop={true} playsInLine={true}>
-                        <source src="/disney-plus/videos/national-geographic.mp4" type="video/mp4"/>
-                    </video>
-                </Wrap>
-            </Scroll>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-disney.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/disney.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-pixar.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/pixar.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-marvel.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/marvel.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-starwars.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/star-wars.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-national.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/national-geographic.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/disney-plus/images/viewers-star.png" alt="" />
+                <video muted autoPlay={true} loop={true} playsInLine={true}>
+                    <source src="/disney-plus/videos/star.mp4" type="video/mp4"/>
+                </video>
+            </Wrap>
         </Container>
     )
 }
 
 const Container = styled.div`
-    //display: grid;
-    @media (max-width: 768px) {
-        //grid-template-columns: 20px 1fr 20px;
-        overflow-x: scroll;
-        scroll-snap-type: x proximity;
-    }
-`
-
-const Scroll = styled.div`
-    margin-top: 30px;
-    padding: 30px 0px 26px;
+    padding: 30px 10px 26px;
     display: grid;
     grid-gap: 25px;
     gap: 25px;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     @media (max-width: 768px) {
-        grid-gap: 10px;
-        grid-template-columns: repeat(5, calc(50% - 40px));
-        grid-template-rows: minmax(0, 1fr);
-        grid-column: 2 / -2;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 `
 
@@ -74,10 +64,6 @@ const Wrap = styled.div`
     position: relative;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 3px solid rgba(249, 249, 249, 0.1);
-
-    @media (max-width: 768px) {
-        
-    }
 
     img {
         inset: 0px;

@@ -17,22 +17,67 @@ const ImgSlider = (props) => {
         <Carousel {...settings}>
             <Wrap>
                 <a>
-                    <div id="badging"/>
+                    <div id="american-dad"><img id="american-dad-logo" src="/disney-plus/images/slider-american-dad-logo.png"/></div>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <div id="scale"/>
+                    <div id="among"><img id="among-logo" src="/disney-plus/images/slider-among-logo.png"/></div>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <div id="badag"/>
+                    <div id="black-widow"><img id="black-widow-logo" src="/disney-plus/images/slider-black-widow-logo.png"/></div>
                 </a>
             </Wrap>
             <Wrap>
                 <a>
-                    <div id="scales"/>
+                    <div id="criminal-minds"><img id="criminal-minds-logo" src="/disney-plus/images/slider-criminal-minds-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="family-guy"><img id="family-guy-logo" src="/disney-plus/images/slider-family-guy-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="free-guy"><img id="free-guy-logo" src="/disney-plus/images/slider-free-guy-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="just-beyond"><img id="just-beyond-logo" src="/disney-plus/images/slider-just-beyond-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="muppets"><img id="muppets-logo" src="/disney-plus/images/slider-muppets-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="my-name"><img id="my-name-logo" src="/disney-plus/images/slider-my-name-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="only-murders"><img id="only-murders-logo" src="/disney-plus/images/slider-only-murders-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="simpsons"><img id="simpsons-logo" src="/disney-plus/images/slider-simpsons-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="star-wars"><img id="star-wars-logo" src="/disney-plus/images/slider-star-wars-logo.png"/></div>
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <div id="what-if"><img id="what-if-logo" src="/disney-plus/images/slider-what-if-logo.png"/></div>
                 </a>
             </Wrap>
         </Carousel>
@@ -57,6 +102,7 @@ const Carousel = styled(Slider)`
     ul li button {
         &:before {
             font-size: 10px;
+            opacity: 1;
             color: rgb(150, 158, 171);
         }
     }
@@ -70,11 +116,26 @@ const Carousel = styled(Slider)`
     }
 
     .slick-prev {
-        left: -75px;
+        left: -5%;
     }
 
     .slick-next {
-        right: -75px;
+        right: -5%;
+    }
+
+    .slick-dots {
+        bottom: 20px;
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        right: 25px;
+        text-align: right;
+        width: 100%;
+    }
+
+    .slick-dots li {
+        margin: 0;
     }
 `
 
@@ -82,6 +143,7 @@ const Wrap = styled.div`
     border-radius: 4px;
     cursor: pointer;
     position: relative;
+    padding: 0;
 
     a {
         border-radius: 4px;
@@ -89,38 +151,93 @@ const Wrap = styled.div`
         cursor: pointer;
         display: block;
         position: relative;
-        padding: 4px;
+        margin: 10px;
+        text-decoration: none;
+        &:hover {
+            border: 4px solid rgba(249, 249, 249, 0.8);
+            margin: 0px;
+        }
 
         div {
             height: 0;
-            min-height: 170px;
             width: 100%;
             background-position: right;
             background-size: cover;
             background-repeat: no-repeat;
-            padding-top: 25.55%;
+            padding-top: 25.6%;
+            border-radius: 4px;
+            display: block;
+            z-index: -1;
         }
 
-        #badging {
-            background-image: url('/disney-plus/images/slider-badging.jpg')
+        img {
+            inset: 0px;
+            position: absolute;
+            height: 100%;
         }
 
-        #scale {
-            background-image: url('/disney-plus/images/slider-scale.jpg')
+        #american-dad {
+            background-image: url('/disney-plus/images/slider-american-dad.jfif');
         }
 
-        #badag {
-            background-image: url('/disney-plus/images/slider-badag.jpg')
+        #among {
+            background-image: url('/disney-plus/images/slider-among.jfif');
+        }
+        #among-logo {
+            padding: 5%;            
         }
 
-        #scales {
-            background-image: url('/disney-plus/images/slider-scales.jpg')
+        #black-widow {
+            background-image: url('/disney-plus/images/slider-black-widow.jfif');
+        }
+        #black-widow-logo {
+            padding: 5%;
         }
 
-        &:hover {
-            padding: 0;
-            border: 4px solid rgba(249, 249, 249, 0.8);
-            transition-duration: 100ms;
+        #criminal-minds {
+            background-image: url('/disney-plus/images/slider-criminal-minds.jfif');
+        }
+
+        #family-guy {
+            background-image: url('/disney-plus/images/slider-family-guy.jfif');
+        }
+
+        #free-guy {
+            background-image: url('/disney-plus/images/slider-free-guy.jfif');
+        }
+
+        #just-beyond {
+            background-image: url('/disney-plus/images/slider-just-beyond.jfif');
+        }
+
+        #muppets {
+            background-image: url('/disney-plus/images/slider-muppets.jfif');
+        }
+        
+        #my-name {
+            background-image: url('/disney-plus/images/slider-my-name.jfif');
+        }
+
+        #only-murders {
+            background-image: url('/disney-plus/images/slider-only-murders.jfif');
+        }
+        #only-murders-logo {
+            padding: 5%;
+        }
+
+        #simpsons {
+            background-image: url('/disney-plus/images/slider-simpsons.jfif');
+        }
+        
+        #star-wars {
+            background-image: url('/disney-plus/images/slider-star-wars.jfif');
+        }
+
+        #what-if {
+            background-image: url('/disney-plus/images/slider-what-if.jfif');
+        }
+        #what-if-logo {
+            padding: 5%;
         }
     }
 `

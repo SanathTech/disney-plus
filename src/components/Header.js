@@ -175,6 +175,10 @@ const NavMenu = styled.div`
                 visibility: hidden;
                 width: auto;
             }
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
         }
 
         &:hover {
@@ -184,10 +188,6 @@ const NavMenu = styled.div`
                 opacity: 1 !important;
             }
         }
-    }
-
-    @media (max-width: 1000px) {
-        display: none;
     }
 `;
 

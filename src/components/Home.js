@@ -17,7 +17,7 @@ const Container = styled.main`
     overflow-x: hidden;
     display: block;
     top: 72px;
-    padding: 0 calc(3.5vw + 5px);
+    padding: 0 calc(3.5vw + 15px);
 
     &:after {
         background: url('/disney-plus/images/home-background.png') center center / cover no-repeat fixed;
