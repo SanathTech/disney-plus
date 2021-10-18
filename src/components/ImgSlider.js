@@ -131,6 +131,7 @@ const Carousel = styled(Slider)`
         position: absolute;
         right: 25px;
         text-align: right;
+        pointer-events: none;
         width: 100%;
     }
 
@@ -153,10 +154,7 @@ const Wrap = styled.div`
         position: relative;
         margin: 10px;
         text-decoration: none;
-        &:hover {
-            border: 4px solid rgba(249, 249, 249, 0.8);
-            margin: 0px;
-        }
+        border: 4px solid transparent;
 
         div {
             height: 0;
@@ -174,6 +172,10 @@ const Wrap = styled.div`
             inset: 0px;
             position: absolute;
             height: 100%;
+        }
+
+        &:hover {
+            border: 4px solid rgba(249, 249, 249, 0.8);
         }
 
         #american-dad {
