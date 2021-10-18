@@ -239,6 +239,10 @@ const NavMenuIcons = styled.div`
     @media (min-width: 1008px) {
         display: none;
     }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const Login = styled.div`
