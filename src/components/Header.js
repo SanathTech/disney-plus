@@ -64,7 +64,9 @@ const Header = (props) => {
     return (
         <Nav scrolled={navbar}>
             <Logo>
-                <img src="/disney-plus/images/logo.svg" />
+                <a href="/disney-plus/home">
+                    <img src="/disney-plus/images/logo.svg" />
+                </a>
             </Logo>
             {!userName ? 
                 <Login onClick={handleAuth}>Log in</Login> :
