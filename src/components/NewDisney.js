@@ -41,7 +41,7 @@ const NewDisneys = (props) => {
 
     return (
         <Container>
-            <h4>NewDisneys</h4>
+            <h4>New to Disney+</h4>
             <Carousel {...settings}>
                 {
                     movies && movies.map((movie,key) => (
