@@ -11,6 +11,7 @@ const Header = (props) => {
     const history = useHistory();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
+    const [navbar, setNavbar] = useState(false);
 
     useEffect(() => {
         auth.onAuthStateChanged(async (user) => {
@@ -20,6 +21,16 @@ const Header = (props) => {
             }
         });
     }, [userName]);
+
+    const changeBackground = () => {
+        if(window.scrollY >= 72) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    };
+
+    window.addEventListener('scroll',changeBackground);
 
     const handleAuth = () => {
         if (!userName) {
@@ -51,7 +62,7 @@ const Header = (props) => {
     };
 
     return (
-        <Nav>
+        <Nav scrolled={navbar}>
             <Logo>
                 <img src="/disney-plus/images/logo.svg" />
             </Logo>
@@ -112,17 +123,37 @@ const Header = (props) => {
 }
 
 const Nav = styled.nav`
+    background-color: ${props => props.scrolled ? 'rgb(9, 11, 19)' : 'transparent'};
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 70px;
+    height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 39px;
     letter-spacing: 16px;
+    transition: all 0.2s ease-in-out 0s;
+    will-change: background-color, height;
     z-index: 3;
+
+    &::after {
+        background: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0.03) 15%,rgba(0,0,0,0.125) 30%,rgba(0,0,0,0.25) 46%,rgba(0,0,0,0.4) 61%,rgba(0,0,0,0.553) 75%,rgba(0,0,0,0.694) 88%,rgba(0,0,0,0.8));
+        content: '';
+        height: 170px;
+        left: 0px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        transition: height 300ms ease 0s;
+        z-index: -1;
+        will-change: height;
+        pointer-events: none;
+        display: block;
+    }
+    
+    
 `;
 
 const Logo = styled.a`

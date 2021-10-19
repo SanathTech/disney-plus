@@ -17,7 +17,7 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
-          <Route path='/detail/:id'>
+          <Route path='/movies/:title/:id'>
             <Detail />
           </Route>
           <Route path='/*'>

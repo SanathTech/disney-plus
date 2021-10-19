@@ -26,6 +26,7 @@ const Detail = (props) => {
         <Container>
             <Background>
                 <img src={detailData.backgroundImg} alt={detailData.title} />
+                <div></div>
             </Background>
             <ImageTitle>
                 <img src={detailData.titleImg} alt={detailData.title} />
@@ -72,14 +73,19 @@ const Container = styled.div`
 
 const Background = styled.div`
     left: 0;
-    opacity: 0.8;
+    opacity: 1;
     position: fixed;
     right: 0;
     top: 0;
     z-index: -1;
-
     img {
         width: 100%;
+    }
+
+    div {
+        inset: 0px;
+        position: absolute;
+        background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
     }
 `;
 
