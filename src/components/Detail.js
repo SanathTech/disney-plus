@@ -67,7 +67,7 @@ const Container = styled.div`
     min-height: calc(100vh-250px);
     overflow-x: hidden;
     display: block;
-    top: 50px;
+    top: 72px;
     padding: 0 calc(3.5vw + 25px);
 `
 
@@ -95,14 +95,15 @@ const ImageTitle = styled.div`
     -webkit-box-pack: start;
     justify-content: flex-start;
     margin: 0px auto;
-    height: 30vw;
+    //height: 30vw;
     min-height: 170px;
+    padding-top: 56px;
     padding-bottom: 24px;
     width: 100%;
 
     img {
-        max-width: 600px;
-        min-width: 200px;
+        max-width: 341px;
+        min-width: 100px;
         width: 35vw;
     }
 `
@@ -269,6 +270,7 @@ const Description = styled.div`
     font-weight: 400;
     padding: 0;
     color: rgb(249, 249, 249);
+    padding-bottom: 1rem;
 
     @media (max-width: 768px) {
         font-size: 14px;
