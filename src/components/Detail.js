@@ -172,6 +172,7 @@ const AddList = styled.div`
     margin-right: 16px;
     height: 44px;
     width: 44px;
+    min-width: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,7 +183,6 @@ const AddList = styled.div`
 
     span {
         background-color: rgb(249, 249, 249);
-        display: inline-block;
 
         &:first-child {
             height: 2px;
