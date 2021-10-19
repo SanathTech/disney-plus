@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import db from "./firebase";
 import { collection, doc, getDoc } from 'firebase/firestore';
+import Recommends from "./Recommends";
+import NewDisney from "./NewDisney";
+import Originals from "./Originals";
+import Trending from "./Trending";
 
 const Detail = (props) => {
     const {id} = useParams();
@@ -58,6 +62,10 @@ const Detail = (props) => {
                     {detailData.description}
                 </Description>
             </ContentMeta>
+            <Recommends />
+            <NewDisney />
+            <Originals />
+            <Trending />
         </Container>
     )
 };
