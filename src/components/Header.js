@@ -125,7 +125,7 @@ const Header = (props) => {
 }
 
 const Nav = styled.nav`
-    background-color: ${props => props.scrolled ? 'rgb(9, 11, 19)' : 'transparent'};
+    background-color: ${props => props.scrolled && 'rgb(9, 11, 19)'};
     position: fixed;
     top: 0;
     left: 0;
@@ -136,25 +136,25 @@ const Nav = styled.nav`
     align-items: center;
     padding: 0 39px;
     letter-spacing: 16px;
-    transition: all 0.2s ease-in-out 0s;
-    will-change: background-color, height;
-    z-index: 3;
+    z-index: 5000;
 
-    &::after {
-        background: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0.03) 15%,rgba(0,0,0,0.125) 30%,rgba(0,0,0,0.25) 46%,rgba(0,0,0,0.4) 61%,rgba(0,0,0,0.553) 75%,rgba(0,0,0,0.694) 88%,rgba(0,0,0,0.8));
+    ::after {
+        background: ${props => !props.scrolled && 'linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0.03) 15%,rgba(0,0,0,0.125) 30%,rgba(0,0,0,0.25) 46%,rgba(0,0,0,0.4) 61%,rgba(0,0,0,0.553) 75%,rgba(0,0,0,0.694) 88%,rgba(0,0,0,0.8))'};
         content: '';
         height: 170px;
         left: 0px;
         position: absolute;
         right: 0px;
         top: 0px;
-        transition: height 300ms ease 0s;
-        z-index: -1;
-        will-change: height;
+        z-index: -5;
         pointer-events: none;
         display: block;
     }
     
+    @media (max-width: 768px) {
+        background-color: transparent;
+        position: absolute;
+    }
     
 `;
 
