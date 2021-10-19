@@ -77,6 +77,7 @@ const Container = styled.div`
     display: block;
     top: 72px;
     padding: 0 calc(3.5vw + 25px);
+    padding-bottom: 112px;
 `
 
 const Background = styled.div`
