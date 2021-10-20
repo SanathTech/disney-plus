@@ -4,11 +4,13 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Detail from './components/Detail';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <Router basename="/disney-plus">
+        <ScrollToTop />
         <Header />
         <Switch>
           <Route exact path='/'>
