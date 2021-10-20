@@ -213,6 +213,10 @@ const AddList = styled.div`
         }
     }
 
+    @media (max-width: 768px) {
+        margin: 0 10px 0 0;
+    }
+
     &:hover {
         background: rgb(249, 249, 249);
         span {
