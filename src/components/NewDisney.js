@@ -8,33 +8,53 @@ import { selectNewDisney } from "../features/movie/movieSlice";
 import { useState, useEffect } from "react";
 
 const NewDisneys = (props) => {
-    const [slides, setSlides] = useState();
+    const initialNumSlides = () => {
+        if (window.innerWidth < 768) {
+            return 2;
+        } else if (window.innerWidth < 1080) {
+            return 3;
+        } else if (window.innerWidth < 1440) {
+            return 4;
+        } else {
+            return 5;
+        }
+    }
+
+    const [numSlides, setNumSlides] = useState(initialNumSlides);
 
     useEffect(() => {
         if (window.innerWidth < 768) {
-            setSlides(2)
+            setNumSlides(2)
         } else if (window.innerWidth < 1080) {
-            setSlides(3)
+            setNumSlides(3)
+        } else if (window.innerWidth < 1440) {
+            setNumSlides(4)
         } else {
-            setSlides(4)
+            setNumSlides(5)
         }
-    }, [])
+        console.log('useEffect: ' + numSlides);
+    }, [numSlides]);
 
     window.addEventListener("resize", function () {
         if (window.innerWidth < 768) {
-            setSlides(2)
+            setNumSlides(2)
         } else if (window.innerWidth < 1080) {
-            setSlides(3)
+            setNumSlides(3)
+        } else if (window.innerWidth < 1440) {
+            setNumSlides(4)
         } else {
-            setSlides(4)
+            setNumSlides(5)
         }
-    })
+        console.log('slides = ' + numSlides);
+    });
 
     let settings = {
         dots: false,
         infinite: false,
-        slidesToShow: `${slides}`,
-        slidesToScroll: 1,
+        speed: 500,
+        slidesToShow: numSlides,
+        slidesToScroll: numSlides,
+        autoplay: false,
     };
 
     const movies = useSelector(selectNewDisney);
@@ -80,6 +100,24 @@ const Carousel = styled(Slider)`
         }
     }
 
+    ul li button {
+        &:before {
+            font-size: 10px;
+            opacity: 1;
+            color: rgb(150, 158, 171);
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    li.slick-active button:before {
+        color: white;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
     .slick-list {
         overflow: initial;
     }
@@ -90,6 +128,22 @@ const Carousel = styled(Slider)`
 
     .slick-next {
         right: -5%;
+    }
+
+    .slick-dots {
+        bottom: 20px;
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        right: 25px;
+        text-align: right;
+        pointer-events: none;
+        width: 100%;
+    }
+
+    .slick-dots li {
+        margin: 0;
     }
 `
 
