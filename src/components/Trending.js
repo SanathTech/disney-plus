@@ -79,6 +79,7 @@ const Trending = (props) => {
 };
 
 const Container = styled.div`
+
     h4{
         padding: 10px 10px 0 10px;
         margin: 15px 0 10px 0;

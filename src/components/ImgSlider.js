@@ -2,6 +2,7 @@ import styled from "styled-components";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import {Link} from 'react-router-dom';
 
 const ImgSlider = (props) => {
     let settings = {
@@ -16,69 +17,69 @@ const ImgSlider = (props) => {
     return (
         <Carousel {...settings}>
             <Wrap>
-                <a>
+                <Link to="/movies/american-dad/XQNuEK75ak2DG633zz5J">
                     <div id="american-dad"><img id="american-dad-logo" src="/disney-plus/images/slider-american-dad-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/among-the-stars/JPEySj8JC2mBkRsHRjPu">
                     <div id="among"><img id="among-logo" src="/disney-plus/images/slider-among-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/black-widow/XUzXglxUP4JOZcoawORD">
                     <div id="black-widow"><img id="black-widow-logo" src="/disney-plus/images/slider-black-widow-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/criminal-minds/DJTDaYcfrnn8cBBtA0Ly">
                     <div id="criminal-minds"><img id="criminal-minds-logo" src="/disney-plus/images/slider-criminal-minds-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/family-guy/rMeh1UVv3TRt9d5bszRu">
                     <div id="family-guy"><img id="family-guy-logo" src="/disney-plus/images/slider-family-guy-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/free-guy/KgxrmfYXDjtNoypXAbDa">
                     <div id="free-guy"><img id="free-guy-logo" src="/disney-plus/images/slider-free-guy-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/just-beyond/sMHKLocTqWBjCKQ7yaHp">
                     <div id="just-beyond"><img id="just-beyond-logo" src="/disney-plus/images/slider-just-beyond-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/muppets-haunted-mansion/K3wu7IFBBaXMJuiXxer3">
                     <div id="muppets"><img id="muppets-logo" src="/disney-plus/images/slider-muppets-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/my-name-is-earl/F4FMI2bqvZWIZJ7DIrGi">
                     <div id="my-name"><img id="my-name-logo" src="/disney-plus/images/slider-my-name-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/only-murders-in-the-building/odqosZ2lPNkOozqau920">
                     <div id="only-murders"><img id="only-murders-logo" src="/disney-plus/images/slider-only-murders-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/the-simpsons/KPB1PWXK9GzY3kMqzuyA">
                     <div id="simpsons"><img id="simpsons-logo" src="/disney-plus/images/slider-simpsons-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/star-wars-visions/qDL1YHBrxQwKXDk2VNoG">
                     <div id="star-wars"><img id="star-wars-logo" src="/disney-plus/images/slider-star-wars-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
             <Wrap>
-                <a>
+                <Link to="/movies/what-if/MHcpogETBFAlRWbVM9Dg">
                     <div id="what-if"><img id="what-if-logo" src="/disney-plus/images/slider-what-if-logo.png"/></div>
-                </a>
+                </Link>
             </Wrap>
         </Carousel>
     )

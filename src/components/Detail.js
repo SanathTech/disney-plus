@@ -7,6 +7,7 @@ import Recommends from "./Recommends";
 import NewDisney from "./NewDisney";
 import Originals from "./Originals";
 import Trending from "./Trending";
+import Footer from "./Footer";
 
 const Detail = (props) => {
     const {id} = useParams();
@@ -28,44 +29,47 @@ const Detail = (props) => {
 
     return (
         <Container>
-            <Background>
-                <img src={detailData.backgroundImg} alt={detailData.title} />
-                <div></div>
-            </Background>
-            <ImageTitle>
-                <img src={detailData.titleImg} alt={detailData.title} />
-            </ImageTitle>
-            <ContentMeta>
-                <SubTitle>
-                    {detailData.subTitle}
-                </SubTitle>
-                <Controls>
-                    <Player>
-                        <img src="/disney-plus/images/play-icon-black.png" alt="" />
-                        <span>Play</span>
-                    </Player>
-                    <Trailer>
-                        <span>Trailer</span>
-                    </Trailer>
-                    <AddList>
-                        <span></span>
-                        <span></span>
-                    </AddList>
-                    <GroupWatch>
-                        <div>
-                            <img id="white" src="/disney-plus/images/group-icon-white.svg" alt="" />
-                            <img id="black" src="/disney-plus/images/group-icon-black.svg" alt="" />
-                        </div>
-                    </GroupWatch>
-                </Controls>
-                <Description>
-                    {detailData.description}
-                </Description>
-            </ContentMeta>
-            <Recommends />
-            <NewDisney />
-            <Originals />
-            <Trending />
+                <Wrapper>
+                <Background>
+                    <img src={detailData.backgroundImg} alt={detailData.title} />
+                    <div></div>
+                </Background>
+                <ImageTitle>
+                    <img src={detailData.titleImg} alt={detailData.title} />
+                </ImageTitle>
+                <ContentMeta>
+                    <SubTitle>
+                        {detailData.subTitle}
+                    </SubTitle>
+                    <Controls>
+                        <Player>
+                            <img src="/disney-plus/images/play-icon-black.png" alt="" />
+                            <span>Play</span>
+                        </Player>
+                        <Trailer>
+                            <span>Trailer</span>
+                        </Trailer>
+                        <AddList>
+                            <span></span>
+                            <span></span>
+                        </AddList>
+                        <GroupWatch>
+                            <div>
+                                <img id="white" src="/disney-plus/images/group-icon-white.svg" alt="" />
+                                <img id="black" src="/disney-plus/images/group-icon-black.svg" alt="" />
+                            </div>
+                        </GroupWatch>
+                    </Controls>
+                    <Description>
+                        {detailData.description}
+                    </Description>
+                </ContentMeta>
+                <Recommends />
+                <NewDisney />
+                <Originals />
+                <Trending />
+                </Wrapper>
+            <Footer />
         </Container>
     )
 };
@@ -76,8 +80,10 @@ const Container = styled.div`
     overflow-x: hidden;
     display: block;
     top: 72px;
-    padding: 0 calc(3.5vw + 25px);
-    padding-bottom: 112px;
+`
+
+const Wrapper = styled.div`
+    padding: 0 calc(3.5vw + 25px) 112px;
 `
 
 const Background = styled.div`

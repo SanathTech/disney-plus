@@ -44,7 +44,7 @@ const Viewers = (props) => {
 }
 
 const Container = styled.div`
-    padding: 20px 10px 0px;
+    padding: 20px 10px 0;
     display: grid;
     grid-gap: 25px;
     gap: 25px;

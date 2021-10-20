@@ -11,6 +11,7 @@ import db from "./firebase";
 import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
 import { collection, doc, onSnapshot } from 'firebase/firestore';
+import Footer from "./Footer";
 
 const Home = (props) => {
     const dispatch = useDispatch();
@@ -50,12 +51,15 @@ const Home = (props) => {
 
     return (
         <Container>
-            <ImgSlider />
-            <Viewers />
-            <Recommends />
-            <NewDisney />
-            <Originals />
-            <Trending />
+            <Wrapper>
+                <ImgSlider />
+                <Viewers />
+                <Recommends />
+                <NewDisney />
+                <Originals />
+                <Trending />
+                </Wrapper>
+            <Footer />
         </Container>
     )
 }
@@ -65,7 +69,7 @@ const Container = styled.main`
     min-height: calc(100vh - 250px);
     overflow-x: hidden;
     display: block;
-    padding: 72px calc(3.5vw + 15px);
+    padding-top: 72px;
 
     &:after {
         background: url('/disney-plus/images/home-background.png') center center / cover no-repeat fixed;
@@ -75,7 +79,9 @@ const Container = styled.main`
         opacity: 1;
         z-index: -1;
     }
-    
+`
+const Wrapper = styled.div`
+    padding: 0 calc(3.5vw + 15px);
 `
 
 export default Home;
