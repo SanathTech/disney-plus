@@ -1,43 +1,56 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Viewers = (props) => {
     return (
         <Container>
             <Wrap>
-                <img src="/disney-plus/images/viewers-disney.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/disney.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/disney">
+                    <img src="/disney-plus/images/viewers-disney.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/disney.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
             <Wrap>
-                <img src="/disney-plus/images/viewers-pixar.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/pixar.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/pixar">
+                    <img src="/disney-plus/images/viewers-pixar.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/pixar.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
             <Wrap>
-                <img src="/disney-plus/images/viewers-marvel.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/marvel.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/marvel">
+                    <img src="/disney-plus/images/viewers-marvel.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/marvel.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
             <Wrap>
-                <img src="/disney-plus/images/viewers-starwars.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/star-wars.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/star-wars">
+                    <img src="/disney-plus/images/viewers-starwars.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/star-wars.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
             <Wrap>
-                <img src="/disney-plus/images/viewers-national.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/national-geographic.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/national-geographic">
+                    <img src="/disney-plus/images/viewers-national.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/national-geographic.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
             <Wrap>
-                <img src="/disney-plus/images/viewers-star.png" alt="" />
-                <video muted autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/disney-plus/videos/star.mp4" type="video/mp4"/>
-                </video>
+                <Link to="/star">
+                    <img src="/disney-plus/images/viewers-star.png" alt="" />
+                    <video muted autoPlay={true} loop={true} playsInline={true}>
+                        <source src="/disney-plus/videos/star.mp4" type="video/mp4"/>
+                    </video>
+                </Link>
             </Wrap>
         </Container>
     )

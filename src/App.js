@@ -5,6 +5,12 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Detail from './components/Detail';
 import ScrollToTop from './components/ScrollToTop';
+import Marvel from './components/Marvel';
+import Disney from './components/Disney';
+import Star from './components/Star';
+import National from './components/National';
+import StarWars from './components/StarWars';
+import Pixar from './components/Pixar';
 
 function App() {
   return (
@@ -21,6 +27,24 @@ function App() {
           </Route>
           <Route path='/movies/:title/:id'>
             <Detail />
+          </Route>
+          <Route path='/marvel'>
+            <Marvel />
+          </Route>
+          <Route path='/disney'>
+            <Disney />
+          </Route>
+          <Route path='/star'>
+            <Star />
+          </Route>
+          <Route path='/national-geographic'>
+            <National />
+          </Route>
+          <Route path='/star-wars'>
+            <StarWars />
+          </Route>
+          <Route path='/pixar'>
+            <Pixar />
           </Route>
           <Route path='/*'>
             <Home />
