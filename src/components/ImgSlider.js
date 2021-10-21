@@ -17,16 +17,6 @@ const ImgSlider = (props) => {
     return (
         <Carousel {...settings}>
             <Wrap>
-                <Link to="/movies/american-dad/XQNuEK75ak2DG633zz5J">
-                    <div id="american-dad"><img id="american-dad-logo" src="/disney-plus/images/slider-american-dad-logo.png"/></div>
-                </Link>
-            </Wrap>
-            <Wrap>
-                <Link to="/movies/among-the-stars/JPEySj8JC2mBkRsHRjPu">
-                    <div id="among"><img id="among-logo" src="/disney-plus/images/slider-among-logo.png"/></div>
-                </Link>
-            </Wrap>
-            <Wrap>
                 <Link to="/movies/black-widow/XUzXglxUP4JOZcoawORD">
                     <div id="black-widow"><img id="black-widow-logo" src="/disney-plus/images/slider-black-widow-logo.png"/></div>
                 </Link>
@@ -47,8 +37,18 @@ const ImgSlider = (props) => {
                 </Link>
             </Wrap>
             <Wrap>
+                <Link to="/movies/american-dad/XQNuEK75ak2DG633zz5J">
+                    <div id="american-dad"><img id="american-dad-logo" src="/disney-plus/images/slider-american-dad-logo.png"/></div>
+                </Link>
+            </Wrap>
+            <Wrap>
                 <Link to="/movies/just-beyond/sMHKLocTqWBjCKQ7yaHp">
                     <div id="just-beyond"><img id="just-beyond-logo" src="/disney-plus/images/slider-just-beyond-logo.png"/></div>
+                </Link>
+            </Wrap>
+            <Wrap>
+                <Link to="/movies/among-the-stars/JPEySj8JC2mBkRsHRjPu">
+                    <div id="among"><img id="among-logo" src="/disney-plus/images/slider-among-logo.png"/></div>
                 </Link>
             </Wrap>
             <Wrap>
