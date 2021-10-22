@@ -117,6 +117,31 @@ const Carousel = styled(Slider)`
             display: none;
         }
     }
+    .slick-slide {
+        a{
+            opacity: 0.5;
+            transition: opacity 950ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
+        }
+        
+        img {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
+        }
+    }
+
+    .slick-active {
+        a {
+            z-index: 99;
+            opacity: 1;
+        }
+        
+        img {
+            opacity: 1;
+            transform: translateX(0px);
+            transition: transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms, opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
+        }
+    }
 
     .slick-list {
         overflow: initial;
@@ -162,6 +187,7 @@ const Wrap = styled.div`
         margin: 10px;
         text-decoration: none;
         border: 4px solid transparent;
+        transition: all 150ms cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s !important;
 
         div {
             height: 0;
