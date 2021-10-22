@@ -149,7 +149,7 @@ const Carousel = styled(Slider)`
 
 const Wrap = styled.div`
 
-    a {
+a {
         box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, 
                     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
         cursor: pointer;
@@ -157,12 +157,11 @@ const Wrap = styled.div`
         position: relative;
         margin: 0 10px;
         text-decoration: none;
-        border: 4px solid transparent;
-        border-radius: 10px;
+        border-radius: 4px;
         overflow: hidden;
-        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        border: 3px solid rgba(249, 249, 249, 0.1);
-        
+        transition-duration: 300ms;
+        transition-property: transform, box-shadow;
+        transition-timing-function: ease-out;
 
         div {
             height: 0;
@@ -184,11 +183,13 @@ const Wrap = styled.div`
             box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
                     rgb(0 0 0 / 72%) 0px 30px 22px -10px;
             transform: scale(1.05);
-            border-color: rgba(249, 249, 249, 0.8);
-    }
-    }
-
-    
+            transition-duration: 300ms;
+            transition-property: transform, box-shadow;
+            transition-timing-function: ease-out;
+            outline: 4px solid rgba(249, 249, 249, 0.8);
+            outline-offset: -4px;
+        }
+    }    
 `
 
 export default Trending;

@@ -11,7 +11,7 @@ const ImgSlider = (props) => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
     };
 
     return (
@@ -186,7 +186,6 @@ const Wrap = styled.div`
         position: relative;
         margin: 10px;
         text-decoration: none;
-        border: 4px solid transparent;
         transition: all 150ms cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s !important;
 
         div {
@@ -199,16 +198,16 @@ const Wrap = styled.div`
             border-radius: 4px;
             display: block;
             z-index: -1;
+            &:hover {
+            outline: 4px solid rgba(249, 249, 249, 0.8);
+            outline-offset: -4px;
+        }
         }
 
         img {
             inset: 0px;
             position: absolute;
             height: 100%;
-        }
-
-        &:hover {
-            border: 4px solid rgba(249, 249, 249, 0.8);
         }
 
         #american-dad {
