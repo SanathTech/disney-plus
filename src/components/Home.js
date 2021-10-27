@@ -12,8 +12,10 @@ import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
 import { collection, doc, onSnapshot } from 'firebase/firestore';
 import Footer from "./Footer";
+import Popular from "./Popular";
 
 const Home = (props) => {
+
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     let recommends = [];
@@ -49,11 +51,14 @@ const Home = (props) => {
         });
     }, [userName]);
 
+    
+
     return (
         <Container>
             <Wrapper>
                 <ImgSlider />
                 <Viewers />
+                {/* <Popular header='Popular Movies'/> */}
                 <Recommends />
                 <NewDisney />
                 <Originals />

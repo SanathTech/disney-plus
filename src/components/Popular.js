@@ -3,11 +3,16 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import {Link} from 'react-router-dom';
-import { useSelector } from "react-redux";
-import { selectTrending } from "../features/movie/movieSlice";
 import { useState, useEffect } from "react";
+import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
+import { useMoviesFetch } from "../hooks/useMoviesFetch";
+import API from '../API';
 
-const Trending = (props) => {
+const Popular = ({ header, children }) => {
+    
+    const { state, loading, error } = useMoviesFetch();
+    console.log(state);
+
     const initialNumSlides = () => {
         if (window.innerWidth < 768) {
             return 2;
@@ -55,18 +60,21 @@ const Trending = (props) => {
         autoplay: false,
     };
 
-    const movies = useSelector(selectTrending);
-
     return (
         <Container>
-            <h4>Trending</h4>
+            <h4>{header}</h4>
             <Carousel {...settings}>
                 {
-                    movies && movies.map((movie,key) => (
-                        <Wrap key={key} image={movie.cardImg} title={movie.title.replace(/\s+/g, '-').toLowerCase()}>
-                            <Link to={'/movies/' + movie.title.replace(/\s+/g, '-').toLowerCase() + '/' + movie.id}>
-                                {/* <img src={movie.cardImg} alt={movie.title} /> */}
-                                    <div id={movie.title.replace(/\s+/g, '-').toLowerCase()} />
+                    state.results.map(movie => (
+
+                        <Wrap
+                            key={movie.id}
+                            image={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path} 
+                            title={movie.title.normalize("NFD").replace(/\W+/g, "-").toLowerCase()}
+                            movieId={movie.id}
+                        >
+                            <Link to={'/movies/' + movie.title.normalize("NFD").replace(/\W+/g, "-").toLowerCase() + '/' + movie.id}>
+                                    <div id={movie.title.normalize("NFD").replace(/\W+/g, "-").toLowerCase()} />
                             </Link>
                         </Wrap>
                     ))
@@ -169,13 +177,14 @@ const Wrap = styled.div`
             background-position: right;
             background-size: cover;
             background-repeat: no-repeat;
-            padding-top: 56.25%;
+            padding-top: 150%;
             border-radius: 4px;
             display: block;
             z-index: -1;
         }
 
         #${props => props.title} {
+            /* background-image: ${props => `url("${props.image}")`}; */
             background-image: ${props => `url("${props.image}")`};
         }
 
@@ -192,4 +201,4 @@ const Wrap = styled.div`
     }
 `
 
-export default Trending;
+export default Popular;

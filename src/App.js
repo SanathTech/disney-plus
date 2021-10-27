@@ -11,6 +11,7 @@ import Star from './components/Star';
 import National from './components/National';
 import StarWars from './components/StarWars';
 import Pixar from './components/Pixar';
+import Movie from './components/Movie';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path='/movies/:title/:id'>
             <Detail />
           </Route>
+          {/* <Route path='/movies/:title/:id'>
+            <Movie />
+          </Route> */}
           <Route path='/marvel'>
             <Marvel />
           </Route>

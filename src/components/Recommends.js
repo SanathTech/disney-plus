@@ -32,7 +32,6 @@ const Recommends = (props) => {
         } else {
             setNumSlides(5)
         }
-        console.log('useEffect: ' + numSlides);
     }, [numSlides]);
 
     window.addEventListener("resize", function () {
@@ -45,7 +44,6 @@ const Recommends = (props) => {
         } else {
             setNumSlides(5)
         }
-        console.log('slides = ' + numSlides);
     });
 
     let settings = {
